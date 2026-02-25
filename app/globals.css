@@ -28,6 +28,8 @@
 html,
 body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -35,7 +37,8 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow: hidden;
+  overflow-y: hidden;
+  /* App is a fixed-height shell */
 }
 
 /* ─── APP SHELL ─── */

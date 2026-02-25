@@ -6,6 +6,14 @@ export const metadata = {
     description: 'Business intelligence agent for Skylark Drones — query your Monday.com boards conversationally.',
 };
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    themeColor: '#060D1B',
+};
+
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
