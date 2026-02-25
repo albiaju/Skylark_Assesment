@@ -957,7 +957,7 @@ body {
 
 @media (max-width: 480px) {
   .top-nav {
-    height: 50px;
+    height: 52px;
     padding: 0 12px;
   }
 
@@ -965,57 +965,83 @@ body {
     display: none;
   }
 
-  /* hide title on tiny screens */
-
-  .kpi-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .chat-layout {
+    height: calc(100svh - 52px);
   }
 
-  .dash-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .message {
+    padding: 12px 0;
+    margin-bottom: 2px;
   }
 
-  .dash-title {
-    font-size: 20px;
+  .msg-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .msg-bubble {
+    max-width: 88%;
+    font-size: 14px;
+    padding: 10px 14px;
+    line-height: 1.5;
   }
 
   .report-bubble {
-    padding: 16px !important;
-    max-width: 98% !important;
+    padding: 14px 10px !important;
+    max-width: 100% !important;
+    margin: 0 -8px;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+  }
+
+  .report-bubble h2 {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+
+  .report-bubble table {
+    margin: 12px 0;
+  }
+
+  .report-bubble td,
+  .report-bubble th {
+    padding: 8px 5px;
+    font-size: 11.5px;
   }
 
   .chat-topbar {
     padding: 0 12px;
+    height: 50px;
   }
 
   .topbar-btn span {
     display: none;
   }
 
-  /* keep only icons if text exists */
-
   .dash-table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
   }
 
   .dash-table {
     min-width: 600px;
-    /* force scrollable table */
   }
 
   .input-area {
-    padding: 12px;
+    padding: 10px;
+  }
+
+  .chat-input {
+    padding: 10px 14px;
+    font-size: 14.5px;
   }
 }
 
 /* ─── CHAT SPLIT LAYOUT ─── */
 .chat-layout {
   display: flex;
-  height: calc(100vh - 56px);
+  height: calc(100svh - 56px);
   overflow: hidden;
 }
 
@@ -1035,7 +1061,7 @@ body {
   border-bottom: 1px solid var(--border);
   background: rgba(6, 13, 27, 0.9);
   flex-shrink: 0;
-  height: 44px;
+  height: 48px;
 }
 
 .topbar-btn {
