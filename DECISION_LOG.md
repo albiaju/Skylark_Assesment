@@ -1,6 +1,6 @@
 # Decision Log — Skylark Drones BI Agent
 
-**Author:** Skylark Assignment  
+**Author:** Albi Aju  
 **Date:** February 2026  
 **Timeline:** 6 hours
 
