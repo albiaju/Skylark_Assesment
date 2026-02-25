@@ -935,6 +935,7 @@ body {
 
   .kpi-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .dashboard {
@@ -951,6 +952,63 @@ body {
 
   .mini-dash {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    height: 50px;
+    padding: 0 12px;
+  }
+
+  .nav-name {
+    display: none;
+  }
+
+  /* hide title on tiny screens */
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dash-title {
+    font-size: 20px;
+  }
+
+  .report-bubble {
+    padding: 16px !important;
+    max-width: 98% !important;
+  }
+
+  .chat-topbar {
+    padding: 0 12px;
+  }
+
+  .topbar-btn span {
+    display: none;
+  }
+
+  /* keep only icons if text exists */
+
+  .dash-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dash-table {
+    min-width: 600px;
+    /* force scrollable table */
+  }
+
+  .input-area {
+    padding: 12px;
   }
 }
 

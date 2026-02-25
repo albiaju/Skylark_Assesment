@@ -226,22 +226,24 @@ export default function Dashboard() {
                         <ClipboardList size={14} strokeWidth={2} color="var(--blue)" />
                         <span className="chart-title">Top Work Orders by Contract Value</span>
                     </div>
-                    <table className="dash-table">
-                        <thead>
-                            <tr><th>Work Order</th><th>Sector</th><th>Status</th><th>Contract Value</th><th>Receivable</th></tr>
-                        </thead>
-                        <tbody>
-                            {data.recentWOs.map((w, i) => (
-                                <tr key={i}>
-                                    <td>{w.name}</td>
-                                    <td><span className="sector-tag">{w.sector || '—'}</span></td>
-                                    <td><span className={`status-tag ${statusClass(w.status)}`}>{w.status || '—'}</span></td>
-                                    <td>{INR(w.value)}</td>
-                                    <td style={{ color: w.receivable > 0 ? 'var(--red)' : 'var(--emerald)' }}>{INR(w.receivable)}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className="dash-table-wrapper">
+                        <table className="dash-table">
+                            <thead>
+                                <tr><th>Work Order</th><th>Sector</th><th>Status</th><th>Contract Value</th><th>Receivable</th></tr>
+                            </thead>
+                            <tbody>
+                                {data.recentWOs.map((w, i) => (
+                                    <tr key={i}>
+                                        <td>{w.name}</td>
+                                        <td><span className="sector-tag">{w.sector || '—'}</span></td>
+                                        <td><span className={`status-tag ${statusClass(w.status)}`}>{w.status || '—'}</span></td>
+                                        <td>{INR(w.value)}</td>
+                                        <td style={{ color: w.receivable > 0 ? 'var(--red)' : 'var(--emerald)' }}>{INR(w.receivable)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>

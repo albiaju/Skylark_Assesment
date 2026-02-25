@@ -37,7 +37,7 @@ export default function ChatMessage({ message }) {
                         EXECUTIVE REPORT
                     </div>
                 )}
-                <div className={`msg-bubble ${isError ? 'error' : ''} ${isReport ? 'report-bubble' : ''}`}>
+                <div className={`msg-bubble ${isError ? 'error' : ''} ${isReport ? 'report-bubble' : ''}`} style={{ wordBreak: 'break-word' }}>
                     {isUser ? (
                         <p style={{ margin: 0 }}>{cleanContent}</p>
                     ) : (
