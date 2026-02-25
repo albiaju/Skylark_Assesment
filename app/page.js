@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ChatMessage from '@/components/ChatMessage';
 import {
     DollarSign, Trophy, AlertTriangle, Target, ClipboardList, CreditCard,
-    RefreshCw, ArrowUpRight, Send, Trash2, BarChart2, Bot,
+    RefreshCw, ArrowUpRight, Send, Trash2, BarChart2, Bot, X,
 } from 'lucide-react';
 
 const STORAGE_KEY = 'skylark_chat_messages';
@@ -71,7 +71,7 @@ const MINI_KPIS = [
     { key: 'collectionRate', label: 'Collection Rate', color: 'teal', Icon: CreditCard, fmt: (v) => v != null ? `${v}%` : 'N/A' },
 ];
 
-function MiniDashboard() {
+function MiniDashboard({ onClose }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [spinning, setSpinning] = useState(false);
@@ -102,6 +102,9 @@ function MiniDashboard() {
                         <ArrowUpRight size={12} strokeWidth={2} />
                         Full
                     </Link>
+                    <button className="mini-close-btn" onClick={onClose} title="Close sidebar">
+                        <X size={14} strokeWidth={2.5} />
+                    </button>
                 </div>
             </div>
 
@@ -316,7 +319,12 @@ export default function Home() {
             </div>
 
             {/* ── Mini Sidebar ── */}
-            {sidebarOpen && <MiniDashboard />}
+            {sidebarOpen && (
+                <>
+                    <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />
+                    <MiniDashboard onClose={() => setSidebarOpen(false)} />
+                </>
+            )}
         </div>
     );
 }
