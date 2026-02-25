@@ -953,13 +953,14 @@ body {
     display: none;
   }
 
-  /* Mobile Drawer Behavior */
+  /* Mobile Drawer Behavior - Starts below the Nav */
   .mini-dash {
     position: fixed;
     right: 0;
-    top: 0;
+    top: 56px;
+    /* Below Desktop Nav */
     bottom: 0;
-    z-index: 1100;
+    z-index: 1000;
     width: 290px;
     box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
     background: var(--bg);
@@ -969,18 +970,26 @@ body {
 
   .mini-close-btn {
     display: flex;
+    gap: 6px;
+    padding: 6px 10px;
+  }
+
+  .mini-close-btn span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 
   .sidebar-backdrop {
     display: block;
     position: fixed;
-    top: 0;
+    top: 56px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px);
-    z-index: 1099;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 999;
     animation: fadeIn 0.3s ease;
   }
 }
@@ -999,6 +1008,14 @@ body {
   .top-nav {
     height: 52px;
     padding: 0 12px;
+    z-index: 1100;
+    /* Stay on top of sidebar */
+  }
+
+  .mini-dash,
+  .sidebar-backdrop {
+    top: 52px;
+    /* Start below the nav */
   }
 
   .nav-name {
@@ -1110,14 +1127,18 @@ body {
 }
 
 .topbar-btn {
-  padding: 4px 10px;
+  padding: 6px 12px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 6px;
-  color: var(--text3);
+  color: var(--text);
+  /* Increased contrast */
   font-size: 12px;
   cursor: pointer;
   font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   transition: all 0.2s;
 }
 

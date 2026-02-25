@@ -104,6 +104,7 @@ function MiniDashboard({ onClose }) {
                     </Link>
                     <button className="mini-close-btn" onClick={onClose} title="Close sidebar">
                         <X size={14} strokeWidth={2.5} />
+                        <span>Close</span>
                     </button>
                 </div>
             </div>
@@ -223,7 +224,8 @@ export default function Home() {
                     <div style={{ display: 'flex', gap: 8 }}>
                         {messages.length > 0 && (
                             <button className="topbar-btn" onClick={clearChat} title="Clear chat">
-                                <Trash2 size={13} strokeWidth={2} /> Clear
+                                <Trash2 size={13} strokeWidth={2} />
+                                <span>Clear</span>
                             </button>
                         )}
                         <button
@@ -231,7 +233,7 @@ export default function Home() {
                             onClick={() => setSidebarOpen(o => !o)}
                         >
                             <BarChart2 size={13} strokeWidth={2} />
-                            {sidebarOpen ? 'Hide KPIs' : 'Show KPIs'}
+                            <span>{sidebarOpen ? 'Hide KPIs' : 'Show KPIs'}</span>
                         </button>
                     </div>
                 </div>
